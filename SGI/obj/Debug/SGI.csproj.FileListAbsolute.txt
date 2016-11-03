@@ -1,0 +1,25 @@
+E:\SGI\SGI\bin\SGI.dll
+E:\SGI\SGI\bin\SGI.pdb
+E:\SGI\SGI\obj\Debug\SGI.csprojResolveAssemblyReference.cache
+E:\SGI\SGI\obj\Debug\SGI.dll
+E:\SGI\SGI\obj\Debug\SGI.pdb
+C:\Users\MarcosVinicius\Desktop\trabalho C#\SGI\SGI\bin\SGI.dll
+C:\Users\MarcosVinicius\Desktop\trabalho C#\SGI\SGI\bin\SGI.pdb
+C:\Users\MarcosVinicius\Desktop\trabalho C#\SGI\SGI\obj\Debug\SGI.csprojResolveAssemblyReference.cache
+C:\Users\MarcosVinicius\Desktop\trabalho C#\SGI\SGI\obj\Debug\SGI.dll
+C:\Users\MarcosVinicius\Desktop\trabalho C#\SGI\SGI\obj\Debug\SGI.pdb
+C:\Users\Davi\Desktop\SGI\SGI\obj\Debug\SGI.csprojResolveAssemblyReference.cache
+C:\Users\Davi\Desktop\SGI\SGI\obj\Debug\SGI.dll
+C:\Users\Davi\Desktop\SGI\SGI\bin\SGI.dll
+C:\Users\Davi\Desktop\SGI\SGI\bin\SGI.pdb
+C:\Users\Davi\Desktop\SGI\SGI\obj\Debug\SGI.pdb
+C:\Users\Gustavo\Desktop\SGI\SGI\bin\SGI.dll
+C:\Users\Gustavo\Desktop\SGI\SGI\bin\SGI.pdb
+C:\Users\Gustavo\Desktop\SGI\SGI\obj\Debug\SGI.csprojResolveAssemblyReference.cache
+C:\Users\Gustavo\Desktop\SGI\SGI\obj\Debug\SGI.dll
+C:\Users\Gustavo\Desktop\SGI\SGI\obj\Debug\SGI.pdb
+E:\Aplicações .NET C#\SGI\SGI\bin\SGI.dll
+E:\Aplicações .NET C#\SGI\SGI\bin\SGI.pdb
+E:\Aplicações .NET C#\SGI\SGI\obj\Debug\SGI.csprojResolveAssemblyReference.cache
+E:\Aplicações .NET C#\SGI\SGI\obj\Debug\SGI.dll
+E:\Aplicações .NET C#\SGI\SGI\obj\Debug\SGI.pdb

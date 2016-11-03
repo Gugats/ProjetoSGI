@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7de7767b0f2a4f739769f7f620e3ea7f" Name="Diagram1">
+        <EntityTypeShape EntityType="db_sgiModel.Cliente" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sgiModel.Imovel" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sgiModel.Negocio" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sgiModel.Vendedor" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="db_sgiModel.FK_Imovel_ToCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="db_sgiModel.FK_Negocio_ToCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="db_sgiModel.FK_Negocio_ToImovel" ManuallyRouted="false" />
+        <AssociationConnector Association="db_sgiModel.FK_Negocio_ToVendedor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

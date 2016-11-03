@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_sgiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="db_sgiModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="db_sgiModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Imovel" EntityType="db_sgiModel.Store.Imovel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Negocio" EntityType="db_sgiModel.Store.Negocio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendedor" EntityType="db_sgiModel.Store.Vendedor" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Imovel_ToCliente" Association="db_sgiModel.Store.FK_Imovel_ToCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Imovel" EntitySet="Imovel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negocio_ToCliente" Association="db_sgiModel.Store.FK_Negocio_ToCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Negocio" EntitySet="Negocio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negocio_ToImovel" Association="db_sgiModel.Store.FK_Negocio_ToImovel">
+      <End Role="Imovel" EntitySet="Imovel" />
+      <End Role="Negocio" EntitySet="Negocio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negocio_ToVendedor" Association="db_sgiModel.Store.FK_Negocio_ToVendedor">
+      <End Role="Vendedor" EntitySet="Vendedor" />
+      <End Role="Negocio" EntitySet="Negocio" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cpf" Type="nvarchar" MaxLength="50" />
+    <Property Name="Endereco" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Imovel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Tipo_Negocio" Type="nvarchar" MaxLength="50" />
+    <Property Name="Valor" Type="float" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_Cliente" Type="int" />
+    <Property Name="Descricao" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Negocio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Data_Evento" Type="date" />
+    <Property Name="Id_Imovel" Type="int" />
+    <Property Name="Id_Cliente" Type="int" />
+    <Property Name="Id_Vendedor" Type="int" />
+  </EntityType>
+  <EntityType Name="Vendedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cpf" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Imovel_ToCliente">
+    <End Role="Cliente" Type="db_sgiModel.Store.Cliente" Multiplicity="0..1" />
+    <End Role="Imovel" Type="db_sgiModel.Store.Imovel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Imovel">
+        <PropertyRef Name="Id_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negocio_ToCliente">
+    <End Role="Cliente" Type="db_sgiModel.Store.Cliente" Multiplicity="0..1" />
+    <End Role="Negocio" Type="db_sgiModel.Store.Negocio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negocio">
+        <PropertyRef Name="Id_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negocio_ToImovel">
+    <End Role="Imovel" Type="db_sgiModel.Store.Imovel" Multiplicity="0..1" />
+    <End Role="Negocio" Type="db_sgiModel.Store.Negocio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Imovel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negocio">
+        <PropertyRef Name="Id_Imovel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negocio_ToVendedor">
+    <End Role="Vendedor" Type="db_sgiModel.Store.Vendedor" Multiplicity="0..1" />
+    <End Role="Negocio" Type="db_sgiModel.Store.Negocio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negocio">
+        <PropertyRef Name="Id_Vendedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

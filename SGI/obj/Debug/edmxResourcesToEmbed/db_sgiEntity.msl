@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="db_sgiModelStoreContainer" CdmEntityContainer="db_sgiEntities">
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="db_sgiModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imovel">
+      <EntityTypeMapping TypeName="db_sgiModel.Imovel">
+        <MappingFragment StoreEntitySet="Imovel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tipo_Negocio" ColumnName="Tipo_Negocio" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Negocio">
+      <EntityTypeMapping TypeName="db_sgiModel.Negocio">
+        <MappingFragment StoreEntitySet="Negocio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data_Evento" ColumnName="Data_Evento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendedor">
+      <EntityTypeMapping TypeName="db_sgiModel.Vendedor">
+        <MappingFragment StoreEntitySet="Vendedor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Imovel_ToCliente" TypeName="db_sgiModel.FK_Imovel_ToCliente" StoreEntitySet="Imovel">
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="Id" ColumnName="Id_Cliente" />
+      </EndProperty>
+      <EndProperty Name="Imovel">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Id_Cliente" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Negocio_ToCliente" TypeName="db_sgiModel.FK_Negocio_ToCliente" StoreEntitySet="Negocio">
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="Id" ColumnName="Id_Cliente" />
+      </EndProperty>
+      <EndProperty Name="Negocio">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Id_Cliente" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Negocio_ToImovel" TypeName="db_sgiModel.FK_Negocio_ToImovel" StoreEntitySet="Negocio">
+      <EndProperty Name="Imovel">
+        <ScalarProperty Name="Id" ColumnName="Id_Imovel" />
+      </EndProperty>
+      <EndProperty Name="Negocio">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Id_Imovel" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Negocio_ToVendedor" TypeName="db_sgiModel.FK_Negocio_ToVendedor" StoreEntitySet="Negocio">
+      <EndProperty Name="Vendedor">
+        <ScalarProperty Name="Id" ColumnName="Id_Vendedor" />
+      </EndProperty>
+      <EndProperty Name="Negocio">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Id_Vendedor" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
